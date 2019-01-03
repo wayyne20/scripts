@@ -21,21 +21,23 @@ GOTO exit
 :mainmenu
 cls
 
-echo. Your Windows edition is compatible
+echo. HotSpot Activator
 
 echo.
 
 echo.
 echo. Choose Your Option...
 echo.
-echo. (1) Activate %SYSTEMID% %WINVER% with KMS
-echo. (2) Permanently Activate with a Digital License
+echo. (1) Start HotSpot
+echo. (2) Stop HotSpoy
+echo. (3) HotSpot Stats
 echo. (0) Close the Program
 
 set /p userinp=    ^   Make your selection: 
 set userinp=%userinp:~0,1%
 if /i "%userinp%"=="1" goto wstart
 if /i "%userinp%"=="2" goto wstop
+if /i "%userinp%"=="3" goto wstat
 if /i "%userinp%"=="0" exit
 
 GOTO mainmenu
@@ -43,23 +45,28 @@ GOTO mainmenu
 :wstart
 cls
 title Starting Virtual WIFI Network!
+echo.
 echo Starting Virtual WIFI Network!
+echo.
 netsh wlan set hostednetwork mode=allow ssid=home key=wonker666
 netsh wlan start hostednetwork
-netsh wlan show hostednetwork
-netsh wlan stop hostednetwork
 goto mainmenu
 
 :wstop
 cls
 title stopping Virtual WIFI Network!
+echo.
 echo stopping Virtual WIFI Network!
+echo.
 netsh wlan stop hostednetwork
 goto mainmenu
 
 :wstat
 cls
-title stopping Virtual WIFI Network!
-echo stopping Virtual WIFI Network!
-netsh wlan stop hostednetwork
+title Virtual WIFI Network Stats!
+echo.
+echo Virtual WIFI Network Stats!
+echo.
+netsh wlan show hostednetwork
+pause
 goto mainmenu
