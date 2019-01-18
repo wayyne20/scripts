@@ -1,0 +1,14 @@
+   Dim info As New ProcessStartInfo
+      ' Hide window
+        info.WindowStyle = ProcessWindowStyle.Hidden
+        info.FileName = "cmd.exe"
+        info.Arguments = "/c netsh winsock reset"
+        Process.Start(info)
+
+
+Dim Findstring = IO.File.ReadAllText("Your File Path")
+Dim Lookfor as string = "hello"
+
+If FindString.Contains(Lookfor) then
+Msgbox("Found: " & Lookfor) 
+end if
